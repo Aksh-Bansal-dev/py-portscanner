@@ -1,7 +1,7 @@
 import socket
 import sys
 from multiprocessing import Process
-import os 
+import os, time
 
 
 def isValidIP(addr):
@@ -59,7 +59,7 @@ def main():
 
     try:
         if n==2 and args[1]=="-h":
-            print("Use -p flag to specify the port.\n")
+            print("Use -p <port_number> to specify the port.\nUse -i <ip_addr> to scan on that IP Address.\n")
         elif n<=5 and n>2:
             gogo = False
             allGood = True
@@ -101,5 +101,7 @@ def main():
     except:
         print("Invalid arguments! \nUse -h to get help")
 
-
+startTime = time.time()
 main()
+endTime = time.time()
+print(f"\nExecuted in {int(1000*(endTime-startTime))} ms.\n")
