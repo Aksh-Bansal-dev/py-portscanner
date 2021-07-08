@@ -26,6 +26,8 @@ def portScan(port, target):
         return False
 
 def search(port, target):
+    print("""Scanning... 
+    """)
     if port!=0:
         if portScan(port, target):
             print(f"port {port} is open on IP {target}")
@@ -42,7 +44,6 @@ def search(port, target):
         for i in range(cpuCount):
             start = int(1+i*(maxRange/cpuCount))
             end = int(1+(i+1)*(maxRange/cpuCount));
-            print(f"Utilizing core {i+1}")
             processes.append(Process(target=ranger, args=[start, end]))
 
         for process in processes:
