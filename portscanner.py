@@ -38,7 +38,7 @@ def search(port, target):
                     print(f"port {i} is open on IP {target}")
         processes = []
         cpuCount = os.cpu_count()
-        maxRange = 65000
+        maxRange = 65536
         for i in range(cpuCount):
             start = int(1+i*(maxRange/cpuCount))
             end = int(1+(i+1)*(maxRange/cpuCount));
