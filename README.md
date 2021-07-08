@@ -1,5 +1,5 @@
 # Py Port Scanner
-Super fast port scanner written in Python.
+Superfast port scanner written in Python.
 
 It uses multiprocessing to utilize all cores and speed up the scanning.
 
